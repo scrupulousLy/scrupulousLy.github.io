@@ -331,7 +331,7 @@
     github注册的邮箱需要验证，否则不会成功;
     仓库名字必须是：username.github.io，其中username是你github的用户名;
 
-    创建成功后，默认会在你这个仓库里生成一些示例页面-忽略.</code></pre><p>三：配置SSH key<br>    （之前已安装好git，在C:盘或者D:盘-根目录新建一个文件夹进入，鼠标右击选择Git Bash Here进行编辑，此处随个人喜好）<br>    输入：（##为注释）<br>        $ cd  ~/.ssh  ## 检查本机是否已经存在ssh秘钥<br>    如果提示：<br>        No such file or directory  说明你是第一次使用git。<br>    输入：<br>        $ ssh-keygen -t rsa -C “邮箱地址”<br>    为了访问方便，建议一路Enter,最后得到信息：<br>        Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub.<br>        最终会生成一个文件在C:\Users用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本或者其他编译器打开并复制里面的内容，打开你的github主页，进入设置settings -&gt; SSH and GPG keys -&gt;(SSH keys) New SSH key，将刚复制的内容粘贴到key那里，title可随便填，保存即可。</p>
+    创建成功后，默认会在你这个仓库里生成一些示例页面-忽略.</code></pre><p>三：配置SSH key<br>    （之前已安装好git，在C:盘或者D:盘-根目录新建一个文件夹进入，鼠标右击选择Git Bash Here进行编辑，此处随个人喜好）<br>    输入：（##为注释）<br>        $ cd  ~/.ssh  ## 检查本机是否已经存在ssh秘钥<br>    如果提示：<br>        No such file or directory  说明你是第一次使用git。<br>    输入：<br>        $ ssh-keygen -t rsa -C “邮箱地址”<br>    为了访问方便，建议一路Enter,最后得到信息：<br>        Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub.<br>        最终会生成一个文件在C:\Users用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本或者其他编译器打开并复制里面的内容，打开你的github主页，进入设置settings -&gt; SSH and GPG keys -&gt;(SSH keys) New SSH key，将刚复制的内容粘贴到key那里，title可随便填(也可不填)，保存即可。</p>
 <pre><code>测试是否添加成功：
     输入：
         $ ssh -T git@github.com  ## 注意邮箱地址不要写错
