@@ -13,7 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <title>
     
-      博客搭建步骤（测试） | Daryll博客
+      摘抄 | Daryll博客
     
   </title>
   <meta name="author" content="我的小名叫lulu">
@@ -164,7 +164,7 @@
 	<!-- Page title -->
 	<p>
 		
-			当前文章&nbsp;:&nbsp;《博客搭建步骤（测试）》
+			当前文章&nbsp;:&nbsp;《摘抄》
 		
 	</p>
 
@@ -275,8 +275,8 @@
 	<div class="article-title">
 		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		
-	<a href="/2019/09/24/博客简单搭建/" itemprop="url">
-		博客搭建步骤（测试）
+	<a href="/2019/10/08/摘抄/" itemprop="url">
+		摘抄
 	</a>
 
 	</div>
@@ -289,9 +289,9 @@
 
 	发布于
 
-	<a href="/2019/09/24/博客简单搭建/" itemprop="url">
-		<time datetime="2019-09-24T05:11:01.000Z" itemprop="datePublished">
-	  		2019-09-24
+	<a href="/2019/10/08/摘抄/" itemprop="url">
+		<time datetime="2019-10-08T00:52:20.000Z" itemprop="datePublished">
+	  		2019-10-08
 	  </time>
 	</a>
 	&nbsp;
@@ -307,9 +307,9 @@
 
 	更新于
 
-	<a href="/2019/09/24/博客简单搭建/" itemprop="url">
-		<time datetime="2019-09-24T05:11:01.000Z" itemprop="dateUpdated">
-	  		2019-09-26
+	<a href="/2019/10/08/摘抄/" itemprop="url">
+		<time datetime="2019-10-08T00:52:20.000Z" itemprop="dateUpdated">
+	  		2019-10-08
 	  </time>
 	</a> 
 
@@ -328,56 +328,10 @@
 	</div>
 
 	<div class="article-content" id="article-content">
-		<p>一： 准备工作<br>    · 拥有一个github账号，没有的话可以去注册一个：<a href="https://github.com" target="_blank" rel="noopener">https://github.com</a><br>    · 安装node.js可自行下载： <a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a><br>    · 安装git for windows（或者其它git客户端）:  <a href="https://git-scm.com/downloads/" target="_blank" rel="noopener">https://git-scm.com/downloads/</a><br>    · 网盘（git+node.js安装包）链接：  <a href="https://pan.baidu.com/s/18XnUFJ108uKe283Zbk7Zsw" target="_blank" rel="noopener">https://pan.baidu.com/s/18XnUFJ108uKe283Zbk7Zsw</a> 提取码： j15y </p>
-<pre><code>本次搭建所使用的环境：
-    · Windows7
-    · node.js -v12.10.0
-    · git -v2.23.0
-    · hexo -v3.9.0
-文本编译：
-    Notepad++</code></pre><p>二：搭建Github<br>    新建一个《用户名.github.io》的Lirbrary，比如说，如果你的github用户名是Blog，那么你就新建Blog.github.io的Library（用户名必须同你的github用户名一样，其它名称无效），将来你的网站访问地址就是 <a href="https://Blog.github.io" target="_blank" rel="noopener">https://Blog.github.io</a> 了。</p>
-<pre><code>几个注意的地方：
-    github注册的邮箱需要验证，否则不会成功;
-    仓库名字必须是：username.github.io，其中username是你github的用户名;
-
-    创建成功后，默认会在你这个仓库里生成一些示例页面-忽略.</code></pre><p>三：配置SSH key<br>    （之前已安装好git，在C:盘或者D:盘-根目录新建一个文件夹进入，鼠标右击选择Git Bash Here进行编辑，此处随个人喜好）<br>    输入：（##为注释）<br>        $ cd  ~/.ssh  ## 检查本机是否已经存在ssh秘钥<br>    如果提示：<br>        No such file or directory  说明你是第一次使用git。<br>    输入：<br>        $ ssh-keygen -t rsa -C “邮箱地址”<br>    为了访问方便，建议一路Enter,最后得到信息：<br>        Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub.<br>        最终会生成一个文件在C:\Users用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本或者其他编译器打开并复制里面的内容，打开你的github主页，进入设置settings -&gt; SSH and GPG keys -&gt;(SSH keys) New SSH key，将刚复制的内容粘贴到key那里，title可随便填(也可不填)，保存即可。</p>
-<pre><code>测试是否添加成功：
-    输入：
-        $ ssh -T git@github.com  ## 注意邮箱地址不要写错
-    如果提示：
-        Are you sure you want to continue connecting (yes/no)?
-    输入: yes 然后会看到：
-        Hi liuxianan! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
-    看到这个信息说明SSH已配置成功！
-    此时你还需要进行配置：
-    输入：
-        $ git config --global user.name “github用户名”  ## 填写你github用户名
-        $ git config --global user.email “github邮箱地址”  ## 填写你github注册的邮箱</code></pre><p>四：安装Hexo<br>    官网：<a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a></p>
-<pre><code>初始化：
-    可新建一个文件夹（名字自己随便取），比如我的是D：\GitLibrary，由于这个文件夹将来就作为存放代码的地方，所以最好不要随便放。
-    （例： 进入D:盘新建的文件夹GitLibrary，鼠标右击选择Git Bash Here进行编译）
-输入：
-    $ npm install
-    $ npm install -g hexo-cli  
-输入：
-    $ hexo init
-成功会出现提示如下！
-    INFO Start blogging with Hexo!
-执行完hexo init会自动下载一些文件到这个目录。
-初始化hexo后，在该目录下source目录会自生成一个hello-world.md的文件，可直接执行以下命令启动服务：
-输入：
-    $ hexo g  ##生成（hexo generate简写）
-    $ hexo s  ##启动服务（hexo server简写）
-出现提示：
-    INFO  Start processing
-    INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.
-
-打开浏览器访问 http://localhost:4000 即可看到一个精简版的网页现。
-
-主题修改，可访问官网：
-    官网： https://hexo.io/themes/</code></pre><p>五：部署Hexo<br>    先配置根目录下_config.yml中相关的部分（使用编译器打开）：<br>        ## Site<br>        title:  标题<br>        subtitle:  副标题<br>        description: 描述<br>        author: 名称<br>        language: zh-ch<br>        timezone: Asia/Shanghai<br>    配置deploy部署（repo处url修改成您自己的github-urll地址）<br>        deploy:<br>           type: git<br>           repo: <a href="https://github.com/scrupulousLy/scrupulousLy.github.io.git" target="_blank" rel="noopener">https://github.com/scrupulousLy/scrupulousLy.github.io.git</a><br>           branch: master<br>    注：编辑时切记在( : ) 后添加一个空格，完成后保存。<br>        （如果遇到无法上传可将该处修改为 repo：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:scrupulousLy/scrupulousLy.github.io.git）</p>
-<p>六：发表博客<br>    执行hexo 命令：<br>        $ hexo new “测试文章”<br>    出现：<br>        INFO Created: D:\GitLibrary\source_posts\测试文章.md<br>    根据路径可找到该文件，打开编译器可进行编译。<br>    保存后执行下列hexo命令：<br>        $ hexo clean  ##清楚缓存<br>        $ hexo g  ##生成<br>        $ hexo s  ##预览<br>    此时，打开浏览器访问 <a href="http://localhost:4000，你会发现刚才的文章已经发布成功了。" target="_blank" rel="noopener">http://localhost:4000，你会发现刚才的文章已经发布成功了。</a><br>    执行博客部署。<br>        $ hexo d ##部署<br>    执行时会出现一个错误提示。<br>        Deployer not found：github  或者 Deployer not found： git<br>    这是缺少一个插件：<br>        输入：<br>            $ npm install hexo-deployer-git –save<br>    安装完，再次执行hexo d 部署成功。    </p>
-<p>七：博客效果<br>    可以访问我的git博客来查看效果：https：//scrupulousLy.github.io</p>
+		<p>如果当下所做的一切努力都是为了生存，那我奉劝还是不要去谈恋爱了，最基本的东西你都没搞清楚，合适的人也好，真挚的感情也好，都不是空中楼阁，而是一种更高级的精神需求。</p>
+<p>没有物质保障的爱情，不用风去吹，自己就会被琐碎打败。</p>
+<p>如果对当下迷茫，那就少说多想；如果有了方向，那就默默耕耘。</p>
+<p>如果你的意识依旧停留在满足生存上，而不是为了更好的生活或实现自己的潜在价值与能力，那谈恋爱也无非是找个人互相饲养、彼此慰藉罢了。</p>
 	
 	</div>
 	
@@ -396,12 +350,8 @@
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);">返回顶部</a>
 		
-			<a href="/2019/10/08/摘抄/" title="摘抄" rel="prev">
-				&laquo;上一篇
-			</a>
 		
-		
-			<a href="/2019/09/24/New-Text/" title="抄的一些句子！" rel="next">
+			<a href="/2019/09/24/博客简单搭建/" title="博客搭建步骤（测试）" rel="next">
 				下一篇&raquo;
 			</a>
 			
@@ -422,24 +372,22 @@
 			
 					<li>
 						<div class="relate-post-text">
-							<a class="relate-post-title" href="/2019/10/08/摘抄/" title="摘抄">
-								摘抄			
+							<a class="relate-post-title" href="/2019/09/24/博客简单搭建/" title="博客搭建步骤（测试）">
+								博客搭建步骤（测试）			
 							</a>
 							<p class="relate-post-date">
 								<i class="fa fa-calendar"></i>
-								十月 8日, 2019				
+								九月 24日, 2019				
 							</p>
 							<p class="relate-post-content">
-								如果当下所做的一切努力都是为了生存，那我奉劝还是不要去谈恋爱了，最基本的东西你都没搞清楚，合适的人也好，真挚的感情也好，都不是空中楼阁，而是一种更高级的精神需求。
-没有物质保障的爱情，不用风去吹，自己就会被琐碎打败。
-如果对当下迷茫，...
+								一： 准备工作    · 拥有一个github账号，没有的话可以去注册一个：https://github.com    · 安装node.js可自行下载： https://nodejs.org/zh-cn/download/    ·...
 							</p>
 						</div>
 
 						<div class="relate-post-cover">
-							<a href="/2019/10/08/摘抄/" title="摘抄">				
+							<a href="/2019/09/24/博客简单搭建/" title="博客搭建步骤（测试）">				
 								
-								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="摘抄"/>
+								<img class="lazy" src="/img/placeholder.jpg" data-src="/img/cart_cover.jpg" alt="博客搭建步骤（测试）"/>
 							</a>
 						</div>
 					</li>											
